@@ -1,106 +1,5 @@
 @charset "UTF-8";
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* Add a white background color to the top navigation */
-.topnav {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    color: #7c7c7c;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 14px;
-}
-
 .alert .alert-link {
     font-weight: normal;
     color: #fff;
@@ -108,7 +7,7 @@ video {
 }
 
 .alert-warning {
-    background-color: #0d8aff;
+    background-color: #ff9100;
     color: #f2f2f2;
     justify-content: center;
 }
@@ -120,11 +19,11 @@ video {
 .center {
     text-align: center;
 }
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-  
 }
 
 textarea{
@@ -139,9 +38,32 @@ textarea{
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: rgb(0, 102, 255);
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+.display-3{
+  color: rgb(0, 102, 255);
+}
+
+.lead{
+  color: #000000;
+}
+
+.clearschedulebutton{
+  width: 30%;
+  background-color: #0066ff;
+  border-radius: 4px;
+  padding: 1rem 0;
+  color: white;
+}
+
+.clearschedulebutton:hover{
+  cursor:pointer;
+  box-shadow: 0 0.4rem 2.4rem 0 rgb(8,114,244,0.6);
+  transition: transform 150ms;
+  transform: scale(1);
 }
 
 .description{
@@ -149,8 +71,12 @@ textarea{
 }
 
 .time-block{
-  text-align: center;
+  text-align: left;
   border-radius: 15px;
+}
+
+.description{
+  border: none;
 }
 
 .row {
@@ -161,8 +87,10 @@ textarea{
 
 .hour {
   background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  color: #0066ff;
+  font-size:large;
+  width: 100px;
+  padding: 15px;
 }
 
 .past {
@@ -184,8 +112,10 @@ textarea{
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: #0066ff;
   color: white;
+  width: 120px;
+  font-size: 30px;
 }
 
 .saveBtn i:hover {
