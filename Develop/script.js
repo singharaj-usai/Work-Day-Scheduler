@@ -5,5 +5,6 @@ var interval = setInterval(function() {
     $('#currenTime').html(momentNow.format('YYYY MMMM DD') + ' '
                         + momentNow.format('dddd')
                          .substring(0,3).toUpperCase());
-    $('#currentTime').html(currentDate + " " + momentNow.format('hh:mm:ss A'));
-  }, 100);
+    $('#currentTime').html(currentDate + " " + momentNow.format('hh:mm:ss a'))}, 100);
+
+  

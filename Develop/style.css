@@ -66,6 +66,7 @@ textarea{
   transform: scale(1);
 }
 
+
 .description{
   white-space: pre-wrap;
 }
@@ -119,6 +120,14 @@ textarea{
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 60px;
   transition: all .3s ease-in-out;
+}
+
+.footer {
+  background-color: rgb(255, 255, 255);
+  color: #7c7c7c;
+  display: flex;
+  padding: 14px 16px;
+  justify-content: center;
 }
