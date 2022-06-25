@@ -126,7 +126,7 @@ textarea{
 
 .footer {
   background-color: rgb(255, 255, 255);
-  color: #7c7c7c;
+  width: 100%;
   display: flex;
   padding: 14px 16px;
   justify-content: center;
