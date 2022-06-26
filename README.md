@@ -1,4 +1,4 @@
-# Singharaj's Work Day Scheduler Assignment
+# Singharaj's Work Day Scheduler
 
 ## Index
 1. [Overview](#overview)
