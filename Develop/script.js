@@ -1,5 +1,26 @@
 var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
-var currentHour = moment().format('h:mm:ss a');
+
+var sevenam = $('#7am');
+var eightam = $('#8am');
+var nineam = $('#9am');
+var tenam = $('#10am');
+var elevam = $('#11am');
+var twelvepm = $('#12pm');
+var onepm = $('#13pm');
+var twopm = $('#14pm');
+var threepm = $('#15pm');
+var fourpm = $('#16pm');
+var fivepm = $('#17pm');
+var sixpm = $('18pm');
+var sevenpm = $('#19pm');
+var eightpm = $('#20pm');
+var ninepm = $('#21pm');
+var tenpm = $('#22pm');
+
+var hour = moment().hours();
+var userInput;
+var hourSpan;
+
 var interval = setInterval(function() {
     var momentNow = moment();
     $('#currentTime').html(momentNow.format('YYYY MMMM DD') + ' '
@@ -7,74 +28,91 @@ var interval = setInterval(function() {
                          .substring(0,3).toUpperCase());
     $('#currentTime').html(currentDate + " " + momentNow.format('hh:mm:ss a'));
   }, 100);
-var hour = moment().hours();
-var userInput;
-var hourSpan;
-
-var sevenam = $('#07am');
-var eightam = $('#08am');
-var nineam = $('#09am');
-var tenam = $('#10am');
-var elevam = $('#11am');
-var twelvepm = $('#12pm');
-var onepm = $('#01pm');
-var twopm = $('#02pm');
-var threepm = $('#03pm');
-var fourpm = $('#04pm');
-var fivepm = $('#05pm');
-var sixpm = $('#06pm');
-var sevenpm = $('#07pm');
-var eightpm = $('#08pm');
-var ninepm = $('#09pm');
-var tenpm = $('#10pm');
 
 function schedule() {
+
+    console.log("Current Hour" + hour);
 
     var am7 = JSON.parse(localStorage.getItem("07:00 am"));
     sevenam.val(am7);
 
     var am8 = JSON.parse(localStorage.getItem("08:00 am"));
-    sevenam.val(am8);
+    eightam.val(am8);
 
     var am9 = JSON.parse(localStorage.getItem("09:00 am"));
-    sevenam.val(am9);
+    nineam.val(am9);
 
     var am10 = JSON.parse(localStorage.getItem("10:00 am"));
-    sevenam.val(am10);
+    tenam.val(am10);
 
     var am11 = JSON.parse(localStorage.getItem("11:00 am"));
-    sevenam.val(am11);
+    elevam.val(am11);
 
     var pm12 = JSON.parse(localStorage.getItem("12:00 pm"));
-    sevenam.val(pm12);
+    twelvepm.val(pm12);
 
     var pm01 = JSON.parse(localStorage.getItem("01:00 pm"));
-    sevenam.val(pm01);
+    onepm.val(pm01);
 
     var pm02 = JSON.parse(localStorage.getItem("02:00 pm"));
-    sevenam.val(pm02);
+    twopm.val(pm02);
 
     var pm03 = JSON.parse(localStorage.getItem("03:00 pm"));
-    sevenam.val(pm03);
+    threepm.val(pm03);
 
     var pm04 = JSON.parse(localStorage.getItem("04:00 pm"));
-    sevenam.val(pm04);
+    fourpm.val(pm04);
     
     var pm05 = JSON.parse(localStorage.getItem("05:00 pm"));
-    sevenam.val(pm05);
+    fivepm.val(pm05);
     
     var pm06 = JSON.parse(localStorage.getItem("06:00 pm"));
-    sevenam.val(pm06);
+    sixpm.val(pm06);
 
     var pm07 = JSON.parse(localStorage.getItem("07:00 pm"));
-    sevenam.val(pm07);
+    sevenpm.val(pm07);
 
     var pm08 = JSON.parse(localStorage.getItem("08:00 pm"));
-    sevenam.val(pm08);
+    eightpm.val(pm08);
 
     var pm09 = JSON.parse(localStorage.getItem("09:00 pm"));
-    sevenam.val(pm09);
+    ninepm.val(pm09);
 
     var pm10 = JSON.parse(localStorage.getItem("10:00 pm"));
-    sevenam.val(pm10);
+    tenpm.val(pm10);
 }
+
+function background () {
+      
+  $(".form-control").each(function () {
+      var timeTest = parseInt($(this).attr("id"));
+      hour = parseInt(hour);
+      console.log(timeTest);
+      console.log(hour);
+//      console.log(this);
+      if (hour > timeTest) {
+          $(this).addClass("past");
+      } else if (hour < timeTest) {
+          $(this).addClass("future");
+      } else {
+          $(this).addClass("present");
+      }
+  });
+}
+
+$(document).ready(function(){
+    schedule()
+    background()
+
+    $('.saveBtn').on('click', function(){
+        userInput = $(this).siblings('.form-control').val().trim();
+        console.log(userInput);
+        hourSpan = $(this).siblings('.input-group-prepend').text().trim();
+        console.log(hourSpan);
+        localStorage.setItem(hourSpan, JSON.stringify(userInput));
+    })
+    $('#clearSchedule').on('click', function(){
+        localStorage.clear();
+        schedule()
+    })
+});
