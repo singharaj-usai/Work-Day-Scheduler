@@ -52,7 +52,7 @@ textarea{
 }
 
 .clearschedulebutton{
-  width: 30%;
+  width: 150px;
   background-color: #0066ff;
   border-radius: 4px;
   padding: 1rem 0;
@@ -62,10 +62,9 @@ textarea{
 .clearschedulebutton:hover{
   cursor:pointer;
   box-shadow: 0 0.4rem 2.4rem 0 rgb(8,114,244,0.6);
-  transition: transform 150ms;
+  transition: all .3s ease-out;
   transform: scale(1);
 }
-
 
 .description{
   white-space: pre-wrap;
@@ -121,7 +120,12 @@ textarea{
 
 .saveBtn i:hover {
   font-size: 60px;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease-out;
+}
+
+.saveBtn i:not(:hover) {
+  font-size: 30px;
+  transition: all .3s ease-out;
 }
 
 .footer {
