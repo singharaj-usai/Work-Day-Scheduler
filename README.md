@@ -46,25 +46,17 @@ Repository URL: https://github.com/singharaj-usai/Work-Day-Scheduler
 - THEN the saved events persist
 ````
 ## Screenshots
-* Texts Here
-    * Description
-![](./Assets/)
+* Work Day Scheduler
+    * Planner with time tables color coded
+![](./Develop/1.png)
 
-* Texts Here
-    * Description
-![](./Assets/)
+* Color Coded Time Blocks
+    * Time tables are color coded for the present, past or future hours
+![](./Develop/2.png)
 
-* Texts Here
-    * Description
-![](./Assets/)
-
-* Texts Here
-    * Description
-![](./Assets/)
-
-* Texts Here
-    * Description
-![](./Assets/)
+* Interactable Time Tables
+    * Time blocks can be typed in for a schedule planner and saveable, with a clear schedule button to remove filled in texts.
+![](./Develop/3.png)
 
 
 
@@ -72,4 +64,4 @@ Repository URL: https://github.com/singharaj-usai/Work-Day-Scheduler
 
 * HTML5
 * CSS
-* Powered by JQuery
+* Powered by JQuery Moment Javascript
