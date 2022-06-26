@@ -1,21 +1,21 @@
 var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
 
-var sevenam = $('#7am');
-var eightam = $('#8am');
-var nineam = $('#9am');
+var sevenam = $('#07am');
+var eightam = $('#08am');
+var nineam = $('#09am');
 var tenam = $('#10am');
 var elevam = $('#11am');
 var twelvepm = $('#12pm');
-var onepm = $('#13pm');
-var twopm = $('#14pm');
-var threepm = $('#15pm');
-var fourpm = $('#16pm');
-var fivepm = $('#17pm');
-var sixpm = $('18pm');
-var sevenpm = $('#19pm');
-var eightpm = $('#20pm');
-var ninepm = $('#21pm');
-var tenpm = $('#22pm');
+var onepm = $('#01pm');
+var twopm = $('#02pm');
+var threepm = $('#03pm');
+var fourpm = $('#04pm');
+var fivepm = $('#05pm');
+var sixpm = $('#06pm');
+var sevenpm = $('#07pm');
+var eightpm = $('#08pm');
+var ninepm = $('#09pm');
+var tenpm = $('#10pm');
 
 var hour = moment().hours();
 var userInput;
@@ -31,7 +31,7 @@ var interval = setInterval(function() {
 
 function schedule() {
 
-    console.log("Current Hour" + hour);
+    console.log("Current Hour " + hour);
 
     var am7 = JSON.parse(localStorage.getItem("07:00 am"));
     sevenam.val(am7);
@@ -82,33 +82,35 @@ function schedule() {
     tenpm.val(pm10);
 }
 
-function background () {
-      
-  $(".form-control").each(function () {
-      var timeTest = parseInt($(this).attr("id"));
-      hour = parseInt(hour);
-      console.log(timeTest);
-      console.log(hour);
-//      console.log(this);
-      if (hour > timeTest) {
-          $(this).addClass("past");
-      } else if (hour < timeTest) {
-          $(this).addClass("future");
-      } else {
-          $(this).addClass("present");
-      }
-  });
+function timeblock() {
+    var time = moment().hour();
+    $('.time-block').each(function(){
+        var hour = parseInt($(this).attr('id').split("hour")[1]);
+      //  hour = parseInt(hour);
+
+        if (hour < time) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        } else if (hour === time) {
+            $(this).removeClass('past');
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        } else {
+            $(this).removeClass('present');
+            $(this).removeClass("past");
+            $(this).addClass("future");
+        }
+    })
 }
 
 $(document).ready(function(){
     schedule()
-    background()
+    timeblock()
 
     $('.saveBtn').on('click', function(){
         userInput = $(this).siblings('.form-control').val().trim();
-        console.log(userInput);
         hourSpan = $(this).siblings('.input-group-prepend').text().trim();
-        console.log(hourSpan);
         localStorage.setItem(hourSpan, JSON.stringify(userInput));
     })
     $('#clearSchedule').on('click', function(){
