@@ -65,3 +65,4 @@ Repository URL: https://github.com/singharaj-usai/Work-Day-Scheduler
 * HTML5
 * CSS
 * Powered by JQuery Moment Javascript
+* Javascript
