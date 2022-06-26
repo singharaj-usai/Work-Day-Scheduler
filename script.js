@@ -12,10 +12,7 @@ var threepm = $('#03pm');
 var fourpm = $('#04pm');
 var fivepm = $('#05pm');
 var sixpm = $('#06pm');
-var sevenpm = $('#07pm');
-var eightpm = $('#08pm');
-var ninepm = $('#09pm');
-var tenpm = $('#10pm');
+
 
 var hour = moment().hours();
 var userInput;
@@ -29,7 +26,7 @@ var interval = setInterval(function() {
     $('#currentTime').html(currentDate + " " + momentNow.format('hh:mm:ss a'));
   }, 100);
 
-function schedule() {
+function schedule(){
 
     console.log("Current Hour " + hour);
 
@@ -69,40 +66,27 @@ function schedule() {
     var pm06 = JSON.parse(localStorage.getItem("06:00 pm"));
     sixpm.val(pm06);
 
-    var pm07 = JSON.parse(localStorage.getItem("07:00 pm"));
-    sevenpm.val(pm07);
-
-    var pm08 = JSON.parse(localStorage.getItem("08:00 pm"));
-    eightpm.val(pm08);
-
-    var pm09 = JSON.parse(localStorage.getItem("09:00 pm"));
-    ninepm.val(pm09);
-
-    var pm10 = JSON.parse(localStorage.getItem("10:00 pm"));
-    tenpm.val(pm10);
+ 
 }
 
-function timeblock() {
-    var time = moment().hour();
-    $('.time-block').each(function(){
-        var hour = parseInt($(this).attr('id').split("hour")[1]);
-      //  hour = parseInt(hour);
 
-        if (hour < time) {
-            $(this).removeClass("future");
-            $(this).removeClass("present");
+function timeblock(){
+    $(".form-control").each(function(){
+        var time = parseInt($(this).attr("id"));
+        hour = parseInt(hour);
+        console.log(time);
+        console.log(hour);
+
+        if (hour > time) {
             $(this).addClass("past");
-        } else if (hour === time) {
-            $(this).removeClass('past');
-            $(this).removeClass("future");
-            $(this).addClass("present");
-        } else {
-            $(this).removeClass('present');
-            $(this).removeClass("past");
+        } else if (hour < time) {
             $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
         }
-    })
-}
+    });
+    }
+
 
 $(document).ready(function(){
     schedule()
