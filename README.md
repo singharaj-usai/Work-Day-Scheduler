@@ -19,9 +19,9 @@ This week's challenge will be a simple calendar that users can save events for e
 
 ## Links
 
-Live Site URL:
+Live Site URL: https://singharaj-usai.github.io/Work-Day-Scheduler/
 
-Repository URL:
+Repository URL: https://github.com/singharaj-usai/Work-Day-Scheduler
 
 ## User Story
 ````
