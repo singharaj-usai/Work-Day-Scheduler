@@ -11,6 +11,7 @@
 
 # Overview
 
+## Something broke the timetable color codes, I'll be looking at what happened...
 Create a calendar scheduler that can be saved using Moment JS or other alternatives since MomentJS is a legacy project.
 
 ## Summary
